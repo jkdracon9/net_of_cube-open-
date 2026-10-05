@@ -11,11 +11,13 @@
 </head>
 <body>
   <main id="workspace" class="workspace">
-    <nav class="modes" role="group" data-i18n-aria="mode.label">
-      <button data-mode="make" aria-pressed="false" data-i18n="mode.make">전개도 만들기</button>
-      <button data-mode="transform" aria-pressed="false" data-i18n="mode.transform">전개도 바꾸기</button>
-    </nav>
-    <div id="toolbar" class="toolbar" role="toolbar"></div>
+    <div class="topbar">
+      <nav class="modes" role="group" data-i18n-aria="mode.label">
+        <button data-mode="make" aria-pressed="false" data-i18n="mode.make">전개도 만들기</button>
+        <button data-mode="transform" aria-pressed="false" data-i18n="mode.transform">전개도 바꾸기</button>
+      </nav>
+      <div id="toolbar" class="toolbar" role="toolbar"></div>
+    </div>
     <div id="overlay" class="overlay"></div>
     <div id="tray" class="tray" hidden></div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -27,6 +29,15 @@
     <div id="lang-options"></div>
     <div class="row end">
       <button id="close-settings" class="btn primary" data-i18n="settings.close">닫기</button>
+    </div>
+  </dialog>
+
+  <dialog id="erase" class="dialog" aria-labelledby="erase-title" aria-describedby="erase-text">
+    <h2 id="erase-title" data-i18n="erase.title">모두 지울까요?</h2>
+    <p id="erase-text" class="dialog-text" data-i18n="erase.warning">지금까지 찾은 전개도와 하던 작업이 모두 사라집니다. 지운 뒤에는 되돌릴 수 없습니다.</p>
+    <div class="row end">
+      <button id="erase-cancel" class="btn" data-i18n="erase.cancel">취소</button>
+      <button id="erase-ok" class="btn danger" data-i18n="erase.confirm">모두 지우기</button>
     </div>
   </dialog>
   <script src="app.bundle.js" defer></script>
